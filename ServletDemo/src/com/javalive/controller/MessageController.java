@@ -6,18 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.javalive.*;
 /**
  * Servlet implementation class MessageServlet
  */
-@WebServlet("/MessageServlet")
-public class MessageServlet extends HttpServlet {
+//@WebServlet("/Message")
+public class MessageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MessageServlet() {
+    public MessageController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,6 +29,11 @@ public class MessageServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		System.out.println("In the MessageServlet...");
+		System.out.println("Getting bussiness logic content from WelcomeMessage.java file....");
+		WelcomeMessage file=new WelcomeMessage();
+		System.out.println("Message from WelcomeMessge.java is "+file.getMessage());
+		javax.servlet.RequestDispatcher dispatcher1 = request.getRequestDispatcher("/WelcomeJSP.jsp");//WelcomeJSP.jsp");
+		dispatcher1.forward(request, response);
 	}
 
 	/**

@@ -4,4 +4,28 @@
   <welcome-file-list>
     <welcome-file>Index.html</welcome-file>
   </welcome-file-list>
+    <servlet>
+		<servlet-name>Account</servlet-name>
+		<servlet-class>com.javalive.controller.AccountController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Account</servlet-name>
+		<url-pattern>/Account</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Message</servlet-name>
+		<servlet-class>com.javalive.controller.MessageController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Message</servlet-name>
+		<url-pattern>/Message</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ServletLifeCycle</servlet-name>
+		<servlet-class>com.javalive.controller.ServletLifeCycleController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletLifeCycle</servlet-name>
+		<url-pattern>/ServletLifeCycleDemo</url-pattern>
+	</servlet-mapping>
 </web-app>

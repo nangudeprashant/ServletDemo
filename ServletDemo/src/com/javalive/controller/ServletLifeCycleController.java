@@ -12,16 +12,16 @@ import org.apache.catalina.servlet4preview.RequestDispatcher;
 /**
  * Servlet implementation class ServletLifeCycleDemo
  */
-@WebServlet("/ServletLifeCycleDemo")
-public class ServletLifeCycleDemo extends HttpServlet {
+//@WebServlet("/ServletLifeCycle")
+public class ServletLifeCycleController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletLifeCycleDemo() {
+    public ServletLifeCycleController() {
         super();
-        System.out.println("in the constructor......");
+        System.out.println("in the constructor of ServletLifeCycle......");
         // TODO Auto-generated constructor stub
     }
 
@@ -31,12 +31,14 @@ public class ServletLifeCycleDemo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		/*javax.servlet.RequestDispatcher dispatcher1 = request.getRequestDispatcher("/MessageServlet");//WelcomeJSP.jsp");
+		/*javax.servlet.RequestDispatcher dispatcher1 = request.getRequestDispatcher("/Message");//WelcomeJSP.jsp");
 		dispatcher1.include(request, response);
-		response.getWriter().write("\nIn the calling servet after include method......");*/
-		/*javax.servlet.RequestDispatcher dispatcher2 = request.getRequestDispatcher("WelcomeJSP.jsp");
-		dispatcher2.forward(request, response);*/
-		response.sendRedirect("https://www.google.co.in");
+		//response.getWriter().write("\nIn the calling servet after include method......");
+		System.out.println("\nIn the calling servet after include method......");*/
+		//javax.servlet.RequestDispatcher dispatcher2 = request.getRequestDispatcher("WelcomeJSP.jsp");
+		javax.servlet.RequestDispatcher dispatcher2 = getServletContext().getRequestDispatcher("/Account");
+		dispatcher2.forward(request, response);
+		//response.sendRedirect("https://www.google.co.in");
 	}
 
 	/**

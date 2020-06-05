@@ -1,6 +1,6 @@
 package com.javalive;
 
-class WelcomeMessage {
+public class WelcomeMessage {
 
 	public String getMessage() {
 		// TODO Auto-generated method stub

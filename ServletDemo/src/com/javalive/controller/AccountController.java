@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AccountController
  */
-@WebServlet("/AccountController")
+//@WebServlet("/Account")
 public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,6 +28,9 @@ public class AccountController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("In the AccountController...");
+		javax.servlet.RequestDispatcher dispatcher1 = request.getRequestDispatcher("WEB-INF/jsp/Account.jsp");//WelcomeJSP.jsp");
+		dispatcher1.forward(request, response);
 	}
 
 	/**
